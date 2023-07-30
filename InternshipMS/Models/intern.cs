@@ -6,63 +6,63 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class intern
+    public partial class Intern
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public intern()
+        public Intern()
         {
-            queries = new HashSet<query>();
-            submissions = new HashSet<submission>();
+            Queries = new HashSet<Query>();
+            Submissions = new HashSet<Submission>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int user_id { get; set; }
+        public int User_id { get; set; }
 
-        public int guide_id { get; set; }
+        public int Guide_id { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(20)]
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string address { get; set; }
+        public string Address { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string city { get; set; }
+        public string City { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string state { get; set; }
+        public string State { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string country { get; set; }
+        public string Country { get; set; }
 
         [Required]
         [StringLength(20)]
-        public string pincode { get; set; }
+        public string Pincode { get; set; }
 
-        public DateTime? created_at { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        public virtual user user { get; set; }
-
-        public virtual user user1 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<query> queries { get; set; }
+        public virtual User User { get; set; }
+        
+        public virtual User User1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<submission> submissions { get; set; }
+        public virtual ICollection<Query> Queries { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Submission> Submissions { get; set; }
     }
 }

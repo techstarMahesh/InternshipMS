@@ -5,7 +5,9 @@ using System.Web;
 
 namespace InternshipMS.Models
 {
-    public class test
+    public class Test
     {
+        public string TestName { get; set; }
+        public string TestDescription { get; set; }
     }
 }

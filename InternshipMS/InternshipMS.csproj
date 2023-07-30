@@ -134,17 +134,21 @@
     <Compile Include="Migrations\202307300339518_InitialModel.designer.cs">
       <DependentUpon>202307300339518_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307300455559_CaptizeTheFirstLetter.cs" />
+    <Compile Include="Migrations\202307300455559_CaptizeTheFirstLetter.designer.cs">
+      <DependentUpon>202307300455559_CaptizeTheFirstLetter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\intern.cs" />
+    <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\IntershipContext.cs" />
-    <Compile Include="Models\query.cs" />
-    <Compile Include="Models\remark.cs" />
-    <Compile Include="Models\reply.cs" />
-    <Compile Include="Models\role.cs" />
-    <Compile Include="Models\submission.cs" />
-    <Compile Include="Models\task.cs" />
-    <Compile Include="Models\test.cs" />
-    <Compile Include="Models\user.cs" />
+    <Compile Include="Models\Query.cs" />
+    <Compile Include="Models\Remark.cs" />
+    <Compile Include="Models\Reply.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Submission.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +236,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202307300339518_InitialModel.resx">
       <DependentUpon>202307300339518_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307300455559_CaptizeTheFirstLetter.resx">
+      <DependentUpon>202307300455559_CaptizeTheFirstLetter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,22 +6,22 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class remark
+    public partial class Remark
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int submission_id { get; set; }
+        public int Submission_id { get; set; }
 
-        public int guide_id { get; set; }
+        public int Guide_id { get; set; }
 
         [Column("remark", TypeName = "text")]
         [Required]
-        public string remark1 { get; set; }
+        public string Remarks { get; set; }
 
-        public DateTime? created_at { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        public virtual user user { get; set; }
+        public virtual User User { get; set; }
 
-        public virtual submission submission { get; set; }
+        public virtual Submission Submission { get; set; }
     }
 }

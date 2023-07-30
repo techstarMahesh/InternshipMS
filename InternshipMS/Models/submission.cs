@@ -6,31 +6,31 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class submission
+    public partial class Submission
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public submission()
+        public Submission()
         {
-            remarks = new HashSet<remark>();
+            Remarks = new HashSet<Remark>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int intern_id { get; set; }
+        public int Intern_id { get; set; }
 
-        public int task_id { get; set; }
+        public int Task_id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string file_name { get; set; }
+        public string File_name { get; set; }
 
-        public DateTime? created_at { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        public virtual intern intern { get; set; }
+        public virtual Intern Intern { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<remark> remarks { get; set; }
+        public virtual ICollection<Remark> Remarks { get; set; }
 
-        public virtual task task { get; set; }
+        public virtual Task Task { get; set; }
     }
 }

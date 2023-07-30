@@ -14,17 +14,17 @@
 
         protected override void Seed(InternshipMS.Models.IntershipContext context)
         {
-            context.users.AddOrUpdate(x => x.name, new Models.user
+            context.Users.AddOrUpdate(x => x.Name, new Models.User
             {
-                role = new Models.role
+                Role = new Models.Role
                 {
-                    name = "admin"
+                    Name = "admin"
                 },
-                role_id = 1,
-                name = "admin",
-                email = "admin@admin.com",
-                password = "admin",
-                created_at = DateTime.Now
+                Role_id = 1,
+                Name = "admin",
+                Email = "admin@admin.com",
+                Password = "admin",
+                Created_at = DateTime.Now
 
             });
         }

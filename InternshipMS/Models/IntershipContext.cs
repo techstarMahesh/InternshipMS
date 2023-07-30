@@ -12,165 +12,165 @@ namespace InternshipMS.Models
         {
         }
 
-        public virtual DbSet<intern> interns { get; set; }
-        public virtual DbSet<query> queries { get; set; }
-        public virtual DbSet<remark> remarks { get; set; }
-        public virtual DbSet<reply> replies { get; set; }
-        public virtual DbSet<role> roles { get; set; }
-        public virtual DbSet<submission> submissions { get; set; }
-        public virtual DbSet<task> tasks { get; set; }
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<Intern> Interns { get; set; }
+        public virtual DbSet<Query> Queries { get; set; }
+        public virtual DbSet<Remark> Remarks { get; set; }
+        public virtual DbSet<Reply> Replies { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Submission> Submissions { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<intern>()
-                .Property(e => e.name)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.email)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.phone)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Phone)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.address)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Address)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.city)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.City)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.state)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.State)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.country)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Country)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .Property(e => e.pincode)
+            modelBuilder.Entity<Intern>()
+                .Property(e => e.Pincode)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<intern>()
-                .HasMany(e => e.queries)
-                .WithRequired(e => e.intern)
-                .HasForeignKey(e => e.intern_id)
+            modelBuilder.Entity<Intern>()
+                .HasMany(e => e.Queries)
+                .WithRequired(e => e.Intern)
+                .HasForeignKey(e => e.Intern_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<intern>()
-                .HasMany(e => e.submissions)
-                .WithRequired(e => e.intern)
-                .HasForeignKey(e => e.intern_id)
+            modelBuilder.Entity<Intern>()
+                .HasMany(e => e.Submissions)
+                .WithRequired(e => e.Intern)
+                .HasForeignKey(e => e.Intern_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<query>()
-                .Property(e => e.question)
+            modelBuilder.Entity<Query>()
+                .Property(e => e.Question)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<query>()
-                .HasMany(e => e.replies)
-                .WithRequired(e => e.query)
-                .HasForeignKey(e => e.query_id)
+            modelBuilder.Entity<Query>()
+                .HasMany(e => e.Replies)
+                .WithRequired(e => e.Query)
+                .HasForeignKey(e => e.Query_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<remark>()
-                .Property(e => e.remark1)
+            modelBuilder.Entity<Remark>()
+                .Property(e => e.Remarks)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<reply>()
-                .Property(e => e.answer)
+            modelBuilder.Entity<Reply>()
+                .Property(e => e.Answer)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<role>()
-                .Property(e => e.name)
+            modelBuilder.Entity<Role>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<role>()
-                .HasMany(e => e.users)
-                .WithRequired(e => e.role)
-                .HasForeignKey(e => e.role_id)
+            modelBuilder.Entity<Role>()
+                .HasMany(e => e.Users)
+                .WithRequired(e => e.Role)
+                .HasForeignKey(e => e.Role_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<submission>()
-                .Property(e => e.file_name)
+            modelBuilder.Entity<Submission>()
+                .Property(e => e.File_name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<submission>()
-                .HasMany(e => e.remarks)
-                .WithRequired(e => e.submission)
-                .HasForeignKey(e => e.submission_id)
+            modelBuilder.Entity<Submission>()
+                .HasMany(e => e.Remarks)
+                .WithRequired(e => e.Submission)
+                .HasForeignKey(e => e.Submission_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<task>()
-                .Property(e => e.title)
+            modelBuilder.Entity<Task>()
+                .Property(e => e.Title)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<task>()
-                .Property(e => e.description)
+            modelBuilder.Entity<Task>()
+                .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<task>()
-                .HasMany(e => e.queries)
-                .WithRequired(e => e.task)
-                .HasForeignKey(e => e.task_id)
+            modelBuilder.Entity<Task>()
+                .HasMany(e => e.Queries)
+                .WithRequired(e => e.Task)
+                .HasForeignKey(e => e.Task_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<task>()
-                .HasMany(e => e.submissions)
-                .WithRequired(e => e.task)
-                .HasForeignKey(e => e.task_id)
+            modelBuilder.Entity<Task>()
+                .HasMany(e => e.Submissions)
+                .WithRequired(e => e.Task)
+                .HasForeignKey(e => e.Task_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<user>()
-                .Property(e => e.name)
+            modelBuilder.Entity<User>()
+                .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<user>()
-                .Property(e => e.email)
+            modelBuilder.Entity<User>()
+                .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<user>()
-                .Property(e => e.password)
+            modelBuilder.Entity<User>()
+                .Property(e => e.Password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.interns)
-                .WithRequired(e => e.user)
-                .HasForeignKey(e => e.guide_id)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Interns)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.Guide_id)
+                .WillCascadeOnDelete(false);
+                
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Interns1)
+                .WithRequired(e => e.User1)
+                .HasForeignKey(e => e.User_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.interns1)
-                .WithRequired(e => e.user1)
-                .HasForeignKey(e => e.user_id)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Queries)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.Guide_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.queries)
-                .WithRequired(e => e.user)
-                .HasForeignKey(e => e.guide_id)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Remarks)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.Guide_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.remarks)
-                .WithRequired(e => e.user)
-                .HasForeignKey(e => e.guide_id)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Replies)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.Guide_id)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.replies)
-                .WithRequired(e => e.user)
-                .HasForeignKey(e => e.guide_id)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<user>()
-                .HasMany(e => e.tasks)
-                .WithRequired(e => e.user)
-                .HasForeignKey(e => e.guide_id)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Tasks)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.Guide_id)
                 .WillCascadeOnDelete(false);
         }
     }

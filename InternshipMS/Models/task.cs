@@ -6,35 +6,35 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class task
+    public partial class Task
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public task()
+        public Task()
         {
-            queries = new HashSet<query>();
-            submissions = new HashSet<submission>();
+            Queries = new HashSet<Query>();
+            Submissions = new HashSet<Submission>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int guide_id { get; set; }
+        public int Guide_id { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string title { get; set; }
+        public string Title { get; set; }
 
         [Column(TypeName = "text")]
         [Required]
-        public string description { get; set; }
+        public string Description { get; set; }
 
-        public DateTime? created_at { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<query> queries { get; set; }
+        public DateTime? Created_at { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<submission> submissions { get; set; }
+        public virtual ICollection<Query> Queries { get; set; }
 
-        public virtual user user { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Submission> Submissions { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

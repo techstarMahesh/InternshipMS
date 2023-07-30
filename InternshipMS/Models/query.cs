@@ -6,35 +6,35 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class query
+    public partial class Query
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public query()
+        public Query()
         {
-            replies = new HashSet<reply>();
+            Replies = new HashSet<Reply>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int intern_id { get; set; }
+        public int Intern_id { get; set; }
 
-        public int guide_id { get; set; }
+        public int Guide_id { get; set; }
 
-        public int task_id { get; set; }
+        public int Task_id { get; set; }
 
         [Column(TypeName = "text")]
         [Required]
-        public string question { get; set; }
+        public string Question { get; set; }
 
-        public DateTime? created_at { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        public virtual intern intern { get; set; }
+        public virtual Intern Intern { get; set; }
 
-        public virtual user user { get; set; }
+        public virtual User User { get; set; }
 
-        public virtual task task { get; set; }
+        public virtual Task Task { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reply> replies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
     }
 }

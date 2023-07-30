@@ -6,55 +6,55 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class user
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
+        public User()
         {
-            interns = new HashSet<intern>();
-            interns1 = new HashSet<intern>();
-            queries = new HashSet<query>();
-            remarks = new HashSet<remark>();
-            replies = new HashSet<reply>();
-            tasks = new HashSet<task>();
+            Interns = new HashSet<Intern>();
+            Interns1 = new HashSet<Intern>();
+            Queries = new HashSet<Query>();
+            Remarks = new HashSet<Remark>();
+            Replies = new HashSet<Reply>();
+            Tasks = new HashSet<Task>();
         }
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int role_id { get; set; }
+        public int Role_id { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string password { get; set; }
+        public string Password { get; set; }
 
-        public DateTime? created_at { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<intern> interns { get; set; }
+        public DateTime? Created_at { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<intern> interns1 { get; set; }
+        public virtual ICollection<Intern> Interns { get; set; }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Intern> Interns1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<query> queries { get; set; }
+        public virtual ICollection<Query> Queries { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<remark> remarks { get; set; }
+        public virtual ICollection<Remark> Remarks { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reply> replies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
 
-        public virtual role role { get; set; }
+        public virtual Role Role { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<task> tasks { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; }
     }
 }

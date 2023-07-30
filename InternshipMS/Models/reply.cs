@@ -6,22 +6,22 @@ namespace InternshipMS.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class reply
+    public partial class Reply
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int query_id { get; set; }
+        public int Query_id { get; set; }
 
-        public int guide_id { get; set; }
+        public int Guide_id { get; set; }
 
         [Column(TypeName = "text")]
         [Required]
-        public string answer { get; set; }
+        public string Answer { get; set; }
 
-        public DateTime? created_at { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        public virtual query query { get; set; }
+        public virtual Query Query { get; set; }
 
-        public virtual user user { get; set; }
+        public virtual User User { get; set; }
     }
 }
